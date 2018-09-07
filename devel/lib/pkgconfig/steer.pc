@@ -1,0 +1,8 @@
+prefix=/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel
+
+Name: steer
+Description: Description of steer
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib 
+Requires: 

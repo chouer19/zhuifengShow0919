@@ -1,0 +1,2 @@
+set(pos320_MESSAGE_FILES "")
+set(pos320_SERVICE_FILES "")

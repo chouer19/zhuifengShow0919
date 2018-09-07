@@ -1,0 +1,8 @@
+prefix=/home/xuechong/workspace/ros_ws/zhuifengShow0919/install
+
+Name: pos320
+Description: Description of pos320
+Version: 0.1.0
+Cflags: 
+Libs: -L/home/xuechong/workspace/ros_ws/zhuifengShow0919/install/lib 
+Requires: 
