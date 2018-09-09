@@ -7,10 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel:$CMAKE_PREFIX_PATH"
-export LD_LIBRARY_PATH="/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib:$LD_LIBRARY_PATH"
-export PKG_CONFIG_PATH="/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD="/home/xuechong/workspace/ros_ws/zhuifengShow0919/build"
-export PYTHONPATH="/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/common-lisp"
-export ROS_PACKAGE_PATH="/home/xuechong/workspace/ros_ws/zhuifengShow0919/src:$ROS_PACKAGE_PATH"
