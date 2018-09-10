@@ -31,7 +31,7 @@ struct Pos320Struct {
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "read_pos320");
+  ros::init(argc, argv, "driver");
 
   ros::NodeHandle n;
 
@@ -59,14 +59,20 @@ int main(int argc, char **argv)
 
   zf_msgs::pos320 pos320_data;
 
+  bool is_initialized = false;
+
   int count = 0;
   while (ros::ok())
   {
     /// read pos32 data from serial port
     unsigned char c = 0;
     boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
-    if (0xaa != c) {
-       //std::cout<< (int)c << std::endl;
+    if (0xaa != c && !is_initialized) {
+       /// initializing
+       if(c != 83){
+         std::cout<<"Initializing, " << (int)c/ 2 <<"\% completed ......" << std::endl;
+       }
+       if(c == 200){is_initialized = true;}
        continue;
     }
     boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
@@ -108,7 +114,6 @@ int main(int argc, char **argv)
     char status;
     boost::asio::read(pos320_sp, boost::asio::buffer(&status, sizeof(status)));
     int status1 = (status & 0xC0) >> 6;
-    //int status1 = status % 64;
     int status2 = status & 0x3f;
     boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
     pos320_data.checksum = c;
@@ -140,7 +145,6 @@ int main(int argc, char **argv)
 
     loop_rate.sleep();
   }
-
 
   return 0;
 }

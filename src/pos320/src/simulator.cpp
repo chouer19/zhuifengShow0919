@@ -31,7 +31,7 @@ struct Pos320Struct {
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "sim_pos320");
+  ros::init(argc, argv, "simulator");
 
   ros::NodeHandle n;
 
@@ -55,7 +55,6 @@ int main(int argc, char **argv)
 
     loop_rate.sleep();
   }
-
 
   return 0;
 }
