@@ -15,12 +15,12 @@
 
 /**
  * XUECHONG 2018.09.06, pure pursuit path following
+ * 2018.09.10 version 1.0, completely
  */
 
 /// earth radius is [m]
 const double EARTH_RADIUS = 6371008.8;
 const double PI = std::acos(-1);
-
 
 /// important parameters, need fine-tuning
 const int LOOP_RATE_ = 20;
@@ -28,16 +28,7 @@ zf_msgs::pos320 cur_pose;
 
 bool is_pose_set = false;
 
-
-void LoadMap(){
-
-}
-
-void SmoothMap(){
-
-}
-
-
+/// convert lat,lon to xyz
 inline Eigen::Vector3d getXYZ(const double &lat, const double &lon){
   Eigen::Vector3d e(std::cos(lat/180.0 * PI) * std::cos(lon), std::cos(lat/180.0 * PI) * std::sin(lon), std::sin(lat/180.0 * PI));
   e[0] *= EARTH_RADIUS;
@@ -61,7 +52,6 @@ void currentPointCallback(const zf_msgs::pos320& msg)
   is_pose_set = true;
 }
 
-
 void loadMap(const std::string &filename, std::vector<Eigen::Vector3d> &map) {
   std::ifstream mapfile(filename);
   double lat, lon;
@@ -75,26 +65,22 @@ int main(int argc, char **argv)
   /// load map
   std::vector<Eigen::Vector3d> map;
   loadMap("0910_1.map",map);
+  ROS_INFO_STREAM("finished loading map from file");
 
   /// init node
   ros::init(argc, argv, "path");
   ros::NodeHandle n;
   /// subscribe current pos320 data and update is_pose_set
   ros::Subscriber subCurrentPoint = n.subscribe("pos320_pose", 1000, currentPointCallback);
-
-  /// publish current path
-
-  /// u relative to v
+  /// publish waypoints
   ros::Publisher pubWaypoints = n.advertise<zf_msgs::pose2dArray>("gps_waypoints", 1000);
 
   ROS_INFO_STREAM("pure pursuit start");
-  ros::Rate loop_rate(LOOP_RATE_);
+  //ros::Rate loop_rate(LOOP_RATE_);
+  ros::Rate loop_rate(20);
   while (ros::ok())
   {
     ros::spinOnce();
-    /// check if subscribed data
-    /// two selections
-    //if (!is_pose_set || !is_waypoints_set || !is_velocity_set)
     if (!is_pose_set)
     {
       ROS_WARN("Necessary current pos320 topics are not subscribed yet ... ");
@@ -142,7 +128,8 @@ int main(int argc, char **argv)
       double forward = u_v.dot(now_forward);
       double right = u_v.dot(now_right);
       double bias = std::sqrt( std::pow(right,2) + std::pow(forward,2) );
-      if(bias - dis < 0.2 )
+      /// distance between points from map must be longer than 0.4 meters
+      if(bias - dis < 0.4 )
       {
           continue;
       }
@@ -156,10 +143,8 @@ int main(int argc, char **argv)
       if(index > 50){break;}
     }
     pubWaypoints.publish(waypoints);
-
     loop_rate.sleep();
   }
-
 
   return 0;
 }
