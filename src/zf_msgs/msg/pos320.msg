@@ -19,5 +19,6 @@ float64 a_earth
 float64 v_roll
 float64 v_pitch
 float64 v_head
-uint8 status
+uint8 status1
+uint8 status2
 uint8 checksum

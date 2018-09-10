@@ -40,7 +40,8 @@ class pos320 {
       this.v_roll = null;
       this.v_pitch = null;
       this.v_head = null;
-      this.status = null;
+      this.status1 = null;
+      this.status2 = null;
       this.checksum = null;
     }
     else {
@@ -170,11 +171,17 @@ class pos320 {
       else {
         this.v_head = 0.0;
       }
-      if (initObj.hasOwnProperty('status')) {
-        this.status = initObj.status
+      if (initObj.hasOwnProperty('status1')) {
+        this.status1 = initObj.status1
       }
       else {
-        this.status = 0;
+        this.status1 = 0;
+      }
+      if (initObj.hasOwnProperty('status2')) {
+        this.status2 = initObj.status2
+      }
+      else {
+        this.status2 = 0;
       }
       if (initObj.hasOwnProperty('checksum')) {
         this.checksum = initObj.checksum
@@ -229,8 +236,10 @@ class pos320 {
     bufferOffset = _serializer.float64(obj.v_pitch, buffer, bufferOffset);
     // Serialize message field [v_head]
     bufferOffset = _serializer.float64(obj.v_head, buffer, bufferOffset);
-    // Serialize message field [status]
-    bufferOffset = _serializer.uint8(obj.status, buffer, bufferOffset);
+    // Serialize message field [status1]
+    bufferOffset = _serializer.uint8(obj.status1, buffer, bufferOffset);
+    // Serialize message field [status2]
+    bufferOffset = _serializer.uint8(obj.status2, buffer, bufferOffset);
     // Serialize message field [checksum]
     bufferOffset = _serializer.uint8(obj.checksum, buffer, bufferOffset);
     return bufferOffset;
@@ -282,8 +291,10 @@ class pos320 {
     data.v_pitch = _deserializer.float64(buffer, bufferOffset);
     // Deserialize message field [v_head]
     data.v_head = _deserializer.float64(buffer, bufferOffset);
-    // Deserialize message field [status]
-    data.status = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [status1]
+    data.status1 = _deserializer.uint8(buffer, bufferOffset);
+    // Deserialize message field [status2]
+    data.status2 = _deserializer.uint8(buffer, bufferOffset);
     // Deserialize message field [checksum]
     data.checksum = _deserializer.uint8(buffer, bufferOffset);
     return data;
@@ -292,7 +303,7 @@ class pos320 {
   static getMessageSize(object) {
     let length = 0;
     length += std_msgs.msg.Header.getMessageSize(object.header);
-    return length + 131;
+    return length + 132;
   }
 
   static datatype() {
@@ -302,7 +313,7 @@ class pos320 {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return '571ee0d22b8ee598e452ba804a66440e';
+    return '90a0b5614d459b65b16442e42c81a2f7';
   }
 
   static messageDefinition() {
@@ -329,7 +340,8 @@ class pos320 {
     float64 v_roll
     float64 v_pitch
     float64 v_head
-    uint8 status
+    uint8 status1
+    uint8 status2
     uint8 checksum
     
     ================================================================================
@@ -506,11 +518,18 @@ class pos320 {
       resolved.v_head = 0.0
     }
 
-    if (msg.status !== undefined) {
-      resolved.status = msg.status;
+    if (msg.status1 !== undefined) {
+      resolved.status1 = msg.status1;
     }
     else {
-      resolved.status = 0
+      resolved.status1 = 0
+    }
+
+    if (msg.status2 !== undefined) {
+      resolved.status2 = msg.status2;
+    }
+    else {
+      resolved.status2 = 0
     }
 
     if (msg.checksum !== undefined) {

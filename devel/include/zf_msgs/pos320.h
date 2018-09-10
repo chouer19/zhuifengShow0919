@@ -46,7 +46,8 @@ struct pos320_
     , v_roll(0.0)
     , v_pitch(0.0)
     , v_head(0.0)
-    , status(0)
+    , status1(0)
+    , status2(0)
     , checksum(0)  {
     }
   pos320_(const ContainerAllocator& _alloc)
@@ -71,7 +72,8 @@ struct pos320_
     , v_roll(0.0)
     , v_pitch(0.0)
     , v_head(0.0)
-    , status(0)
+    , status1(0)
+    , status2(0)
     , checksum(0)  {
   (void)_alloc;
     }
@@ -141,8 +143,11 @@ struct pos320_
    typedef double _v_head_type;
   _v_head_type v_head;
 
-   typedef uint8_t _status_type;
-  _status_type status;
+   typedef uint8_t _status1_type;
+  _status1_type status1;
+
+   typedef uint8_t _status2_type;
+  _status2_type status2;
 
    typedef uint8_t _checksum_type;
   _checksum_type checksum;
@@ -225,12 +230,12 @@ struct MD5Sum< ::zf_msgs::pos320_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "571ee0d22b8ee598e452ba804a66440e";
+    return "90a0b5614d459b65b16442e42c81a2f7";
   }
 
   static const char* value(const ::zf_msgs::pos320_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x571ee0d22b8ee598ULL;
-  static const uint64_t static_value2 = 0xe452ba804a66440eULL;
+  static const uint64_t static_value1 = 0x90a0b5614d459b65ULL;
+  static const uint64_t static_value2 = 0xb16442e42c81a2f7ULL;
 };
 
 template<class ContainerAllocator>
@@ -270,7 +275,8 @@ float64 a_earth\n\
 float64 v_roll\n\
 float64 v_pitch\n\
 float64 v_head\n\
-uint8 status\n\
+uint8 status1\n\
+uint8 status2\n\
 uint8 checksum\n\
 \n\
 ================================================================================\n\
@@ -329,7 +335,8 @@ namespace serialization
       stream.next(m.v_roll);
       stream.next(m.v_pitch);
       stream.next(m.v_head);
-      stream.next(m.status);
+      stream.next(m.status1);
+      stream.next(m.status2);
       stream.next(m.checksum);
     }
 
@@ -392,8 +399,10 @@ struct Printer< ::zf_msgs::pos320_<ContainerAllocator> >
     Printer<double>::stream(s, indent + "  ", v.v_pitch);
     s << indent << "v_head: ";
     Printer<double>::stream(s, indent + "  ", v.v_head);
-    s << indent << "status: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.status);
+    s << indent << "status1: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.status1);
+    s << indent << "status2: ";
+    Printer<uint8_t>::stream(s, indent + "  ", v.status2);
     s << indent << "checksum: ";
     Printer<uint8_t>::stream(s, indent + "  ", v.checksum);
   }

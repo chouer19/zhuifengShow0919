@@ -26,22 +26,6 @@ struct Pos320Struct {
   little_int16_t time1;
   little_int32_t time2;
   little_uint8_t num;
-  little_int32_t lat;
-  little_int32_t lon;
-  little_int32_t height;
-  little_int32_t v_n;
-  little_int32_t v_e;
-  little_int32_t v_earth;
-  little_int32_t roll;
-  little_int32_t pitch;
-  little_uint32_t head;
-  little_int16_t a_n;
-  little_int16_t a_e;
-  little_int16_t a_earth;
-  little_int16_t v_roll;
-  little_int16_t v_pitch;
-  little_int16_t v_head;
-  little_uint8_t status;
 };
 
 
@@ -66,6 +50,12 @@ int main(int argc, char **argv)
   pos320_sp.set_option(boost::asio::serial_port_base::stop_bits(boost::asio::serial_port_base::stop_bits::one));
   pos320_sp.set_option(boost::asio::serial_port_base::parity(boost::asio::serial_port_base::parity::none));
   pos320_sp.set_option(boost::asio::serial_port_base::flow_control(boost::asio::serial_port_base::flow_control::none));
+  boost::system::error_code ec;
+  pos320_sp.open("/dev/ttyUSB0", ec );
+  if( !pos320_sp.is_open()){
+    std::cout<< "port not opened" << std::endl;
+  }
+  std::cout<< "port opened" << std::endl;
 
   zf_msgs::pos320 pos320_data;
 
@@ -76,6 +66,7 @@ int main(int argc, char **argv)
     unsigned char c = 0;
     boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
     if (0xaa != c) {
+       //std::cout<< (int)c << std::endl;
        continue;
     }
     boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
@@ -84,31 +75,66 @@ int main(int argc, char **argv)
     }
     Pos320Struct p;
     boost::asio::read(pos320_sp, boost::asio::buffer(&p, sizeof(p)));
+    double lat;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&lat, sizeof(lat)));
+    double lon;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&lon, sizeof(lon)));
+    float height;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&height, sizeof(height)));
+    float v_n;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_n, sizeof(v_n)));
+    float v_e;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_e, sizeof(v_e)));
+    float v_earth;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_earth, sizeof(v_earth)));
+    float roll;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&roll, sizeof(roll)));
+    float pitch ;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&pitch, sizeof(pitch)));
+    float head  ;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&head, sizeof(head)));
+    short a_n   ;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&a_n, sizeof(a_n)));
+    short a_e   ;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&a_e, sizeof(a_e)));
+    short a_earth;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&a_earth, sizeof(a_earth)));
+    short v_roll;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_roll, sizeof(v_roll)));
+    short v_pitch;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_pitch, sizeof(v_pitch)));
+    short v_head;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&v_head, sizeof(v_head)));
+    char status;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&status, sizeof(status)));
+    int status1 = (status & 0xC0) >> 6;
+    //int status1 = status % 64;
+    int status2 = status & 0x3f;
+    boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
+    pos320_data.checksum = c;
 
-    pos320_data.length= p.length;
+    pos320_data.length= int(p.length);
     pos320_data.mode  = p.mode;
     pos320_data.time1 = p.time1;
     pos320_data.time2 = p.time2;
     pos320_data.num   = p.num;
-    pos320_data.lat   = p.lat;
-    pos320_data.lon   = p.lon;
-    pos320_data.height= p.height;
-    pos320_data.v_n   = p.v_n;
-    pos320_data.v_e   = p.v_e;
-    pos320_data.v_earth= p.v_earth;
-    pos320_data.roll  = p.roll;
-    pos320_data.pitch = p.pitch;
-    pos320_data.head  = p.head;
-    pos320_data.a_n   = p.a_n;
-    pos320_data.a_e   = p.a_e;
-    pos320_data.a_earth= p.a_earth;
-    pos320_data.v_roll= p.v_roll;
-    pos320_data.v_pitch= p.v_pitch;
-    pos320_data.v_head= p.v_head;
-    pos320_data.status= p.status;
-    boost::asio::read(pos320_sp, boost::asio::buffer(&c, 1));
-    pos320_data.checksum = c;
-
+    pos320_data.lat   = lat;
+    pos320_data.lon   = lon;
+    pos320_data.height= height;
+    pos320_data.v_n   = v_n;
+    pos320_data.v_e   = v_e;
+    pos320_data.v_earth= v_earth;
+    pos320_data.roll  = roll;
+    pos320_data.pitch = pitch;
+    pos320_data.head  = head;
+    pos320_data.a_n   = a_n;
+    pos320_data.a_e   = a_e;
+    pos320_data.a_earth= a_earth;
+    pos320_data.v_roll= v_roll;
+    pos320_data.v_pitch= v_pitch;
+    pos320_data.v_head= v_head;
+    pos320_data.status1= status1;
+    pos320_data.status2= status2;
     pos320_pub.publish(pos320_data);
     ros::spinOnce();
 

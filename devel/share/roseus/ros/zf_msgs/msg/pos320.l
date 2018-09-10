@@ -16,7 +16,7 @@
 
 (defclass zf_msgs::pos320
   :super ros::object
-  :slots (_header _length _mode _time1 _time2 _num _lat _lon _height _v_n _v_e _v_earth _roll _pitch _head _a_n _a_e _a_earth _v_roll _v_pitch _v_head _status _checksum ))
+  :slots (_header _length _mode _time1 _time2 _num _lat _lon _height _v_n _v_e _v_earth _roll _pitch _head _a_n _a_e _a_earth _v_roll _v_pitch _v_head _status1 _status2 _checksum ))
 
 (defmethod zf_msgs::pos320
   (:init
@@ -42,7 +42,8 @@
     ((:v_roll __v_roll) 0.0)
     ((:v_pitch __v_pitch) 0.0)
     ((:v_head __v_head) 0.0)
-    ((:status __status) 0)
+    ((:status1 __status1) 0)
+    ((:status2 __status2) 0)
     ((:checksum __checksum) 0)
     )
    (send-super :init)
@@ -67,7 +68,8 @@
    (setq _v_roll (float __v_roll))
    (setq _v_pitch (float __v_pitch))
    (setq _v_head (float __v_head))
-   (setq _status (round __status))
+   (setq _status1 (round __status1))
+   (setq _status2 (round __status2))
    (setq _checksum (round __checksum))
    self)
   (:header
@@ -137,9 +139,12 @@
   (:v_head
    (&optional __v_head)
    (if __v_head (setq _v_head __v_head)) _v_head)
-  (:status
-   (&optional __status)
-   (if __status (setq _status __status)) _status)
+  (:status1
+   (&optional __status1)
+   (if __status1 (setq _status1 __status1)) _status1)
+  (:status2
+   (&optional __status2)
+   (if __status2 (setq _status2 __status2)) _status2)
   (:checksum
    (&optional __checksum)
    (if __checksum (setq _checksum __checksum)) _checksum)
@@ -188,7 +193,9 @@
     8
     ;; float64 _v_head
     8
-    ;; uint8 _status
+    ;; uint8 _status1
+    1
+    ;; uint8 _status2
     1
     ;; uint8 _checksum
     1
@@ -239,8 +246,10 @@
        (sys::poke _v_pitch (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
      ;; float64 _v_head
        (sys::poke _v_head (send s :buffer) (send s :count) :double) (incf (stream-count s) 8)
-     ;; uint8 _status
-       (write-byte _status s)
+     ;; uint8 _status1
+       (write-byte _status1 s)
+     ;; uint8 _status2
+       (write-byte _status2 s)
      ;; uint8 _checksum
        (write-byte _checksum s)
      ;;
@@ -289,15 +298,17 @@
      (setq _v_pitch (sys::peek buf ptr- :double)) (incf ptr- 8)
    ;; float64 _v_head
      (setq _v_head (sys::peek buf ptr- :double)) (incf ptr- 8)
-   ;; uint8 _status
-     (setq _status (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _status1
+     (setq _status1 (sys::peek buf ptr- :char)) (incf ptr- 1)
+   ;; uint8 _status2
+     (setq _status2 (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;; uint8 _checksum
      (setq _checksum (sys::peek buf ptr- :char)) (incf ptr- 1)
    ;;
    self)
   )
 
-(setf (get zf_msgs::pos320 :md5sum-) "571ee0d22b8ee598e452ba804a66440e")
+(setf (get zf_msgs::pos320 :md5sum-) "90a0b5614d459b65b16442e42c81a2f7")
 (setf (get zf_msgs::pos320 :datatype-) "zf_msgs/pos320")
 (setf (get zf_msgs::pos320 :definition-)
       "Header header
@@ -321,7 +332,8 @@ float64 a_earth
 float64 v_roll
 float64 v_pitch
 float64 v_head
-uint8 status
+uint8 status1
+uint8 status2
 uint8 checksum
 
 ================================================================================
@@ -346,6 +358,6 @@ string frame_id
 
 
 
-(provide :zf_msgs/pos320 "571ee0d22b8ee598e452ba804a66440e")
+(provide :zf_msgs/pos320 "90a0b5614d459b65b16442e42c81a2f7")
 
 

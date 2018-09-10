@@ -8,7 +8,7 @@ import struct
 import std_msgs.msg
 
 class pos320(genpy.Message):
-  _md5sum = "571ee0d22b8ee598e452ba804a66440e"
+  _md5sum = "90a0b5614d459b65b16442e42c81a2f7"
   _type = "zf_msgs/pos320"
   _has_header = True #flag to mark the presence of a Header object
   _full_text = """Header header
@@ -32,7 +32,8 @@ float64 a_earth
 float64 v_roll
 float64 v_pitch
 float64 v_head
-uint8 status
+uint8 status1
+uint8 status2
 uint8 checksum
 
 ================================================================================
@@ -53,8 +54,8 @@ time stamp
 # 1: global frame
 string frame_id
 """
-  __slots__ = ['header','length','mode','time1','time2','num','lat','lon','height','v_n','v_e','v_earth','roll','pitch','head','a_n','a_e','a_earth','v_roll','v_pitch','v_head','status','checksum']
-  _slot_types = ['std_msgs/Header','uint8','uint8','int16','int32','uint8','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','uint8','uint8']
+  __slots__ = ['header','length','mode','time1','time2','num','lat','lon','height','v_n','v_e','v_earth','roll','pitch','head','a_n','a_e','a_earth','v_roll','v_pitch','v_head','status1','status2','checksum']
+  _slot_types = ['std_msgs/Header','uint8','uint8','int16','int32','uint8','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','float64','uint8','uint8','uint8']
 
   def __init__(self, *args, **kwds):
     """
@@ -64,7 +65,7 @@ string frame_id
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       header,length,mode,time1,time2,num,lat,lon,height,v_n,v_e,v_earth,roll,pitch,head,a_n,a_e,a_earth,v_roll,v_pitch,v_head,status,checksum
+       header,length,mode,time1,time2,num,lat,lon,height,v_n,v_e,v_earth,roll,pitch,head,a_n,a_e,a_earth,v_roll,v_pitch,v_head,status1,status2,checksum
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -115,8 +116,10 @@ string frame_id
         self.v_pitch = 0.
       if self.v_head is None:
         self.v_head = 0.
-      if self.status is None:
-        self.status = 0
+      if self.status1 is None:
+        self.status1 = 0
+      if self.status2 is None:
+        self.status2 = 0
       if self.checksum is None:
         self.checksum = 0
     else:
@@ -141,7 +144,8 @@ string frame_id
       self.v_roll = 0.
       self.v_pitch = 0.
       self.v_head = 0.
-      self.status = 0
+      self.status1 = 0
+      self.status2 = 0
       self.checksum = 0
 
   def _get_types(self):
@@ -165,7 +169,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2BhiB15d2B().pack(_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status, _x.checksum))
+      buff.write(_get_struct_2BhiB15d3B().pack(_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status1, _x.status2, _x.checksum))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -193,8 +197,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 131
-      (_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status, _x.checksum,) = _get_struct_2BhiB15d2B().unpack(str[start:end])
+      end += 132
+      (_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status1, _x.status2, _x.checksum,) = _get_struct_2BhiB15d3B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -216,7 +220,7 @@ string frame_id
         length = len(_x)
       buff.write(struct.pack('<I%ss'%length, length, _x))
       _x = self
-      buff.write(_get_struct_2BhiB15d2B().pack(_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status, _x.checksum))
+      buff.write(_get_struct_2BhiB15d3B().pack(_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status1, _x.status2, _x.checksum))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -245,8 +249,8 @@ string frame_id
         self.header.frame_id = str[start:end]
       _x = self
       start = end
-      end += 131
-      (_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status, _x.checksum,) = _get_struct_2BhiB15d2B().unpack(str[start:end])
+      end += 132
+      (_x.length, _x.mode, _x.time1, _x.time2, _x.num, _x.lat, _x.lon, _x.height, _x.v_n, _x.v_e, _x.v_earth, _x.roll, _x.pitch, _x.head, _x.a_n, _x.a_e, _x.a_earth, _x.v_roll, _x.v_pitch, _x.v_head, _x.status1, _x.status2, _x.checksum,) = _get_struct_2BhiB15d3B().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -255,15 +259,15 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
+_struct_2BhiB15d3B = None
+def _get_struct_2BhiB15d3B():
+    global _struct_2BhiB15d3B
+    if _struct_2BhiB15d3B is None:
+        _struct_2BhiB15d3B = struct.Struct("<2BhiB15d3B")
+    return _struct_2BhiB15d3B
 _struct_3I = None
 def _get_struct_3I():
     global _struct_3I
     if _struct_3I is None:
         _struct_3I = struct.Struct("<3I")
     return _struct_3I
-_struct_2BhiB15d2B = None
-def _get_struct_2BhiB15d2B():
-    global _struct_2BhiB15d2B
-    if _struct_2BhiB15d2B is None:
-        _struct_2BhiB15d2B = struct.Struct("<2BhiB15d2B")
-    return _struct_2BhiB15d2B

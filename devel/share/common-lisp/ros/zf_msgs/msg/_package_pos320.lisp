@@ -41,8 +41,10 @@
           V_PITCH
           V_HEAD-VAL
           V_HEAD
-          STATUS-VAL
-          STATUS
+          STATUS1-VAL
+          STATUS1
+          STATUS2-VAL
+          STATUS2
           CHECKSUM-VAL
           CHECKSUM
 ))

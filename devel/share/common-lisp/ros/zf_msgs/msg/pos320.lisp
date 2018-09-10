@@ -112,9 +112,14 @@
     :initarg :v_head
     :type cl:float
     :initform 0.0)
-   (status
-    :reader status
-    :initarg :status
+   (status1
+    :reader status1
+    :initarg :status1
+    :type cl:fixnum
+    :initform 0)
+   (status2
+    :reader status2
+    :initarg :status2
     :type cl:fixnum
     :initform 0)
    (checksum
@@ -237,10 +242,15 @@
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader zf_msgs-msg:v_head-val is deprecated.  Use zf_msgs-msg:v_head instead.")
   (v_head m))
 
-(cl:ensure-generic-function 'status-val :lambda-list '(m))
-(cl:defmethod status-val ((m <pos320>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader zf_msgs-msg:status-val is deprecated.  Use zf_msgs-msg:status instead.")
-  (status m))
+(cl:ensure-generic-function 'status1-val :lambda-list '(m))
+(cl:defmethod status1-val ((m <pos320>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader zf_msgs-msg:status1-val is deprecated.  Use zf_msgs-msg:status1 instead.")
+  (status1 m))
+
+(cl:ensure-generic-function 'status2-val :lambda-list '(m))
+(cl:defmethod status2-val ((m <pos320>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader zf_msgs-msg:status2-val is deprecated.  Use zf_msgs-msg:status2 instead.")
+  (status2 m))
 
 (cl:ensure-generic-function 'checksum-val :lambda-list '(m))
 (cl:defmethod checksum-val ((m <pos320>))
@@ -397,7 +407,8 @@
     (cl:write-byte (cl:ldb (cl:byte 8 40) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 48) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 56) bits) ostream))
-  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status1)) ostream)
+  (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status2)) ostream)
   (cl:write-byte (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'checksum)) ostream)
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <pos320>) istream)
@@ -566,7 +577,8 @@
       (cl:setf (cl:ldb (cl:byte 8 48) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 56) bits) (cl:read-byte istream))
     (cl:setf (cl:slot-value msg 'v_head) (roslisp-utils:decode-double-float-bits bits)))
-    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status1)) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'status2)) (cl:read-byte istream))
     (cl:setf (cl:ldb (cl:byte 8 0) (cl:slot-value msg 'checksum)) (cl:read-byte istream))
   msg
 )
@@ -578,16 +590,16 @@
   "zf_msgs/pos320")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<pos320>)))
   "Returns md5sum for a message object of type '<pos320>"
-  "571ee0d22b8ee598e452ba804a66440e")
+  "90a0b5614d459b65b16442e42c81a2f7")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'pos320)))
   "Returns md5sum for a message object of type 'pos320"
-  "571ee0d22b8ee598e452ba804a66440e")
+  "90a0b5614d459b65b16442e42c81a2f7")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<pos320>)))
   "Returns full string definition for message of type '<pos320>"
-  (cl:format cl:nil "Header header~%uint8 length~%uint8 mode~%int16 time1~%int32 time2~%uint8 num~%float64 lat~%float64 lon~%float64 height~%float64 v_n~%float64 v_e~%float64 v_earth~%float64 roll~%float64 pitch~%float64 head~%float64 a_n~%float64 a_e~%float64 a_earth~%float64 v_roll~%float64 v_pitch~%float64 v_head~%uint8 status~%uint8 checksum~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint8 length~%uint8 mode~%int16 time1~%int32 time2~%uint8 num~%float64 lat~%float64 lon~%float64 height~%float64 v_n~%float64 v_e~%float64 v_earth~%float64 roll~%float64 pitch~%float64 head~%float64 a_n~%float64 a_e~%float64 a_earth~%float64 v_roll~%float64 v_pitch~%float64 v_head~%uint8 status1~%uint8 status2~%uint8 checksum~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'pos320)))
   "Returns full string definition for message of type 'pos320"
-  (cl:format cl:nil "Header header~%uint8 length~%uint8 mode~%int16 time1~%int32 time2~%uint8 num~%float64 lat~%float64 lon~%float64 height~%float64 v_n~%float64 v_e~%float64 v_earth~%float64 roll~%float64 pitch~%float64 head~%float64 a_n~%float64 a_e~%float64 a_earth~%float64 v_roll~%float64 v_pitch~%float64 v_head~%uint8 status~%uint8 checksum~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
+  (cl:format cl:nil "Header header~%uint8 length~%uint8 mode~%int16 time1~%int32 time2~%uint8 num~%float64 lat~%float64 lon~%float64 height~%float64 v_n~%float64 v_e~%float64 v_earth~%float64 roll~%float64 pitch~%float64 head~%float64 a_n~%float64 a_e~%float64 a_earth~%float64 v_roll~%float64 v_pitch~%float64 v_head~%uint8 status1~%uint8 status2~%uint8 checksum~%~%================================================================================~%MSG: std_msgs/Header~%# Standard metadata for higher-level stamped data types.~%# This is generally used to communicate timestamped data ~%# in a particular coordinate frame.~%# ~%# sequence ID: consecutively increasing ID ~%uint32 seq~%#Two-integer timestamp that is expressed as:~%# * stamp.sec: seconds (stamp_secs) since epoch (in Python the variable is called 'secs')~%# * stamp.nsec: nanoseconds since stamp_secs (in Python the variable is called 'nsecs')~%# time-handling sugar is provided by the client library~%time stamp~%#Frame this data is associated with~%# 0: no frame~%# 1: global frame~%string frame_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <pos320>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'header))
@@ -611,6 +623,7 @@
      8
      8
      8
+     1
      1
      1
 ))
@@ -638,6 +651,7 @@
     (cl:cons ':v_roll (v_roll msg))
     (cl:cons ':v_pitch (v_pitch msg))
     (cl:cons ':v_head (v_head msg))
-    (cl:cons ':status (status msg))
+    (cl:cons ':status1 (status1 msg))
+    (cl:cons ':status2 (status2 msg))
     (cl:cons ':checksum (checksum msg))
 ))
