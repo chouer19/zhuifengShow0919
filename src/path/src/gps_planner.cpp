@@ -4,9 +4,14 @@
 #include "std_msgs/Int32.h"
 #include "nav_msgs/Path.h"
 #include "geometry_msgs/Point.h"
+#include "geometry_msgs/PoseArray.h"
+#include "geometry_msgs/Pose2D.h"
 #include "zf_msgs/pos320.h"
+#include "zf_msgs/pose2dArray.h"
 #include <cmath>
 #include <Eigen/Dense>
+#include <iostream>
+#include <fstream>
 
 /**
  * XUECHONG 2018.09.06, pure pursuit path following
@@ -23,9 +28,6 @@ zf_msgs::pos320 cur_pose;
 
 bool is_pose_set = false;
 
-std::vector<geometry_msgs::Point> waypoints;
-std::vector<geometry_msgs::Point> road;
-geometry_msgs::Point pose;
 
 void LoadMap(){
 
@@ -60,27 +62,30 @@ void currentPointCallback(const zf_msgs::pos320& msg)
 }
 
 
+void loadMap(const std::string &filename, std::vector<Eigen::Vector3d> &map) {
+  std::ifstream mapfile(filename);
+  double lat, lon;
+  while (mapfile >> lat >>lon) {
+    map.push_back(getXYZ(lat,lon));
+  }
+}
+
 int main(int argc, char **argv)
 {
   /// load map
-
-
+  std::vector<Eigen::Vector3d> map;
+  loadMap("0910_1.map",map);
 
   /// init node
-  ros::init(argc, argv, "listener");
-
+  ros::init(argc, argv, "path");
   ros::NodeHandle n;
-
-
   /// subscribe current pos320 data and update is_pose_set
-  ros::Subscriber subCurrentPoint = n.subscribe("current_pose", 1000, currentPointCallback);
+  ros::Subscriber subCurrentPoint = n.subscribe("pos320_pose", 1000, currentPointCallback);
 
   /// publish current path
 
   /// u relative to v
-  ros::Publisher pubWheelSteer = n.advertise<std_msgs::Int32>("wheel_steer", 1000);
-
-
+  ros::Publisher pubWaypoints = n.advertise<zf_msgs::pose2dArray>("gps_waypoints", 1000);
 
   ROS_INFO_STREAM("pure pursuit start");
   ros::Rate loop_rate(LOOP_RATE_);
@@ -92,7 +97,7 @@ int main(int argc, char **argv)
     //if (!is_pose_set || !is_waypoints_set || !is_velocity_set)
     if (!is_pose_set)
     {
-      ROS_WARN("Necessary topics are not subscribed yet ... ");
+      ROS_WARN("Necessary current pos320 topics are not subscribed yet ... ");
       loop_rate.sleep();
       continue;
     }
@@ -113,13 +118,44 @@ int main(int argc, char **argv)
     rotation = Eigen::AngleAxisd( (90 + cur_pose.head)/ -180.0 * PI , ne_vector);
     Eigen::Vector3d now_right = rotation * nn_vector;
     now_right = now_right.normalized();
+
+    double dis = 999;
+    int index = 0;
+    int mark = 0;
   
-    for(geometry_msgs::Point &road_point:road){
-      Eigen::Vector3d u_vector = getXYZ(road_point.x, road_point.y);
-      Eigen::Vector3d u_v = u_vector - n_vector;
+    for(Eigen::Vector3d &road_point:map){
+      Eigen::Vector3d u_v = road_point - n_vector;
       double forward = u_v.dot(now_forward);
       double right = u_v.dot(now_right);
+      double temp = std::sqrt( std::pow(forward,2) + std::pow(right,2) );
+      if(temp < dis){
+        dis = temp;
+        mark = index;
+      }
+      ++index;
     }
+
+    zf_msgs::pose2dArray waypoints;
+    index = 0;
+    for(int i=0; i< index && i < map.size(); i++){
+      Eigen::Vector3d u_v = map[i] - n_vector;
+      double forward = u_v.dot(now_forward);
+      double right = u_v.dot(now_right);
+      double bias = std::sqrt( std::pow(right,2) + std::pow(forward,2) );
+      if(bias - dis < 0.2 )
+      {
+          continue;
+      }
+      dis = bias;
+      geometry_msgs::Pose2D pp;
+      pp.x = right;
+      pp.y = forward;
+      pp.theta = 0;
+      waypoints.points.push_back(pp);
+      ++index;
+      if(index > 50){break;}
+    }
+    pubWaypoints.publish(waypoints);
 
     loop_rate.sleep();
   }
