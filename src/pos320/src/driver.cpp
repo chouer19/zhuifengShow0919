@@ -47,12 +47,11 @@ struct Pos320Struct {
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "talker");
+  ros::init(argc, argv, "read_pos320");
 
   ros::NodeHandle n;
 
-  ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-  ros::Publisher pos320_pub = n.advertise<std_msgs::String>("pos320", 1000);
+  ros::Publisher pos320_pub = n.advertise<zf_msgs::pos320>("pos320_pose", 1000);
 
   /// relative to frequency of pos320
   ros::Rate loop_rate(30);
