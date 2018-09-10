@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
 include zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus.dir/progress.make
 
 zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pos320.l
+zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l
 zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/manifest.l
 
 
@@ -61,14 +62,22 @@ zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_w
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pos320.l: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pos320.l: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from zf_msgs/pos320.msg"
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg
+
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pose2dArray.msg
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l: /opt/ros/kinetic/share/geometry_msgs/msg/Pose2D.msg
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from zf_msgs/pose2dArray.msg"
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pose2dArray.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg
 
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for zf_msgs"
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs zf_msgs std_msgs
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for zf_msgs"
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs zf_msgs std_msgs geometry_msgs
 
 zf_msgs_generate_messages_eus: zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus
 zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pos320.l
+zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/msg/pose2dArray.l
 zf_msgs_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/zf_msgs/manifest.l
 zf_msgs_generate_messages_eus: zf_msgs/CMakeFiles/zf_msgs_generate_messages_eus.dir/build.make
 

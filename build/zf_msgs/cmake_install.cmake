@@ -33,7 +33,10 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/zf_msgs/msg" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/zf_msgs/msg" TYPE FILE FILES
+    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg"
+    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pose2dArray.msg"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")

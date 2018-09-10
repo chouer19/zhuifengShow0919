@@ -3,9 +3,12 @@
 
 path/CMakeFiles/gps_planner.dir/src/gps_planner.cpp.o
  /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include/zf_msgs/pos320.h
+ /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include/zf_msgs/pose2dArray.h
  /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path/src/gps_planner.cpp
  /opt/ros/kinetic/include/geometry_msgs/Point.h
  /opt/ros/kinetic/include/geometry_msgs/Pose.h
+ /opt/ros/kinetic/include/geometry_msgs/Pose2D.h
+ /opt/ros/kinetic/include/geometry_msgs/PoseArray.h
  /opt/ros/kinetic/include/geometry_msgs/PoseStamped.h
  /opt/ros/kinetic/include/geometry_msgs/Quaternion.h
  /opt/ros/kinetic/include/nav_msgs/Path.h

@@ -5,4 +5,4 @@ Description: Description of zf_msgs
 Version: 1.8.0
 Cflags: -I/home/xuechong/workspace/ros_ws/zhuifengShow0919/install/include
 Libs: -L/home/xuechong/workspace/ros_ws/zhuifengShow0919/install/lib 
-Requires: message_runtime std_msgs
+Requires: message_runtime std_msgs geometry_msgs

@@ -58,7 +58,7 @@ steer/CMakeFiles/steer_generate_messages_eus: /home/xuechong/workspace/ros_ws/zh
 
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/steer/manifest.l: /opt/ros/kinetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp manifest code for steer"
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/steer steer std_msgs
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/steer steer std_msgs geometry_msgs zf_msgs
 
 steer_generate_messages_eus: steer/CMakeFiles/steer_generate_messages_eus
 steer_generate_messages_eus: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/steer/manifest.l

@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
 include zf_msgs/CMakeFiles/zf_msgs_generate_messages_py.dir/progress.make
 
 zf_msgs/CMakeFiles/zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py
+zf_msgs/CMakeFiles/zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py
 zf_msgs/CMakeFiles/zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py
 
 
@@ -61,15 +62,24 @@ zf_msgs/CMakeFiles/zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG zf_msgs/pos320"
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pos320.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg
+
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pose2dArray.msg
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py: /opt/ros/kinetic/share/geometry_msgs/msg/Pose2D.msg
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG zf_msgs/pose2dArray"
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg/pose2dArray.msg -Izf_msgs:/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p zf_msgs -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg
 
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for zf_msgs"
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for zf_msgs"
 	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg --initpy
 
 zf_msgs_generate_messages_py: zf_msgs/CMakeFiles/zf_msgs_generate_messages_py
 zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py
+zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py
 zf_msgs_generate_messages_py: /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py
 zf_msgs_generate_messages_py: zf_msgs/CMakeFiles/zf_msgs_generate_messages_py.dir/build.make
 

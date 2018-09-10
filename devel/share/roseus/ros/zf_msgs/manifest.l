@@ -5,5 +5,6 @@
 ;;  FROM /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/package.xml (1.8.0)
 ;; USING /opt/ros/kinetic/lib/python2.7/dist-packages/geneus/geneus_main.pyc /opt/ros/kinetic/share/geneus/package.xml (2.2.6)
 ;;
+(ros::load-ros-package "geometry_msgs")
 (ros::load-ros-package "std_msgs")
 (ros::load-ros-package "zf_msgs")

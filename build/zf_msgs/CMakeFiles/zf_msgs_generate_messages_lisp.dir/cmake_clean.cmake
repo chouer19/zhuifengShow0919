@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/zf_msgs_generate_messages_lisp"
   "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/common-lisp/ros/zf_msgs/msg/pos320.lisp"
+  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/common-lisp/ros/zf_msgs/msg/pose2dArray.lisp"
 )
 
 # Per-language clean rules from dependency scanning.
