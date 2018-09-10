@@ -241,6 +241,21 @@ pos320_geneus/fast:
 .PHONY : pos320_geneus/fast
 
 # Convenience name for target.
+pos320/CMakeFiles/simulator.dir/rule:
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/simulator.dir/rule
+.PHONY : pos320/CMakeFiles/simulator.dir/rule
+
+# Convenience name for target.
+simulator: pos320/CMakeFiles/simulator.dir/rule
+
+.PHONY : simulator
+
+# fast build rule for target.
+simulator/fast:
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/build
+.PHONY : simulator/fast
+
+# Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule:
 	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule
@@ -372,6 +387,33 @@ src/driver.cpp.s:
 	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.s
 .PHONY : src/driver.cpp.s
 
+src/simulator.o: src/simulator.cpp.o
+
+.PHONY : src/simulator.o
+
+# target to build an object file
+src/simulator.cpp.o:
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.o
+.PHONY : src/simulator.cpp.o
+
+src/simulator.i: src/simulator.cpp.i
+
+.PHONY : src/simulator.i
+
+# target to preprocess a source file
+src/simulator.cpp.i:
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.i
+.PHONY : src/simulator.cpp.i
+
+src/simulator.s: src/simulator.cpp.s
+
+.PHONY : src/simulator.s
+
+# target to generate assembly for a file
+src/simulator.cpp.s:
+	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.s
+.PHONY : src/simulator.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -389,6 +431,7 @@ help:
 	@echo "... list_install_components"
 	@echo "... install/strip"
 	@echo "... pos320_geneus"
+	@echo "... simulator"
 	@echo "... pos320_generate_messages_eus"
 	@echo "... pos320_generate_messages_cpp"
 	@echo "... pos320_generate_messages_lisp"
@@ -400,6 +443,9 @@ help:
 	@echo "... src/driver.o"
 	@echo "... src/driver.i"
 	@echo "... src/driver.s"
+	@echo "... src/simulator.o"
+	@echo "... src/simulator.i"
+	@echo "... src/simulator.s"
 .PHONY : help
 
 

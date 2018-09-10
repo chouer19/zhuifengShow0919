@@ -46,9 +46,11 @@ inline Eigen::Vector3d getXYZe(const double &lat, const double &lon){
 void currentPointCallback(const zf_msgs::pos320& msg)
 {
   ///
-  ROS_INFO("I got current pose data: ");
+  //ROS_INFO("I got current pose data: ");
   //ROS_INFO(msg->pose);
   cur_pose = msg;
+  //std::cout<< cur_pose.lat << "\t";
+  //std::cout<< cur_pose.lon << "\n";
   is_pose_set = true;
 }
 
@@ -57,6 +59,7 @@ void loadMap(const std::string &filename, std::vector<Eigen::Vector3d> &map) {
   double lat, lon;
   while (mapfile >> lat >>lon) {
     map.push_back(getXYZ(lat,lon));
+    std::cout<< std::setprecision(10)<< lat << "  " << lon << std::endl;
   }
 }
 
@@ -64,7 +67,7 @@ int main(int argc, char **argv)
 {
   /// load map
   std::vector<Eigen::Vector3d> map;
-  loadMap("0910_1.map",map);
+  loadMap("/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/testdata/0910_1.map",map);
   ROS_INFO_STREAM("finished loading map from file");
 
   /// init node
@@ -83,7 +86,7 @@ int main(int argc, char **argv)
     ros::spinOnce();
     if (!is_pose_set)
     {
-      ROS_WARN("Necessary current pos320 topics are not subscribed yet ... ");
+      //ROS_WARN("Necessary current pos320 topics are not subscribed yet ... ");
       loop_rate.sleep();
       continue;
     }
@@ -111,6 +114,7 @@ int main(int argc, char **argv)
   
     for(Eigen::Vector3d &road_point:map){
       Eigen::Vector3d u_v = road_point - n_vector;
+      //std::cout<< u_v << "\n\n";
       double forward = u_v.dot(now_forward);
       double right = u_v.dot(now_right);
       double temp = std::sqrt( std::pow(forward,2) + std::pow(right,2) );
@@ -120,10 +124,12 @@ int main(int argc, char **argv)
       }
       ++index;
     }
+    //std::cout<<"nearest index:"<< index << "\n";
+    //std::cout<<"nearest dis:" << dis << "\n";
 
     zf_msgs::pose2dArray waypoints;
     index = 0;
-    for(int i=0; i< index && i < map.size(); i++){
+    for(int i=mark;i < map.size(); i++){
       Eigen::Vector3d u_v = map[i] - n_vector;
       double forward = u_v.dot(now_forward);
       double right = u_v.dot(now_right);

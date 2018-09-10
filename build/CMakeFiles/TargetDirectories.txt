@@ -109,6 +109,7 @@
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/list_install_components.dir
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/install/strip.dir
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/pos320_geneus.dir
+/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/simulator.dir
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/pos320_generate_messages_eus.dir
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/pos320_generate_messages_cpp.dir
 /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/pos320_generate_messages_lisp.dir

@@ -29,12 +29,17 @@ catkin_package()
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(driver src/driver.cpp)
+add_executable(simulator src/simulator.cpp)
 target_link_libraries(driver 
                              ${catkin_LIBRARIES}
                              ${Boost_SYSTEM_LIBRARY}
                              ${Boost_THREAD_LIBRARY}
-                             
                      )
-add_dependencies(driver pos320_generate_messages_cpp)
+target_link_libraries(simulator
+                             ${catkin_LIBRARIES}
+                             ${Boost_SYSTEM_LIBRARY}
+                             ${Boost_THREAD_LIBRARY}
+                     )
+add_dependencies(simulator driver pos320_generate_messages_cpp)
 
 # %EndTag(FULLTEXT)%

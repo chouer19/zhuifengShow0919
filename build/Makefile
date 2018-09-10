@@ -1076,6 +1076,19 @@ pos320_geneus/fast:
 .PHONY : pos320_geneus/fast
 
 #=============================================================================
+# Target rules for targets named simulator
+
+# Build rule for target.
+simulator: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simulator
+.PHONY : simulator
+
+# fast build rule for target.
+simulator/fast:
+	$(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/build
+.PHONY : simulator/fast
+
+#=============================================================================
 # Target rules for targets named pos320_generate_messages_eus
 
 # Build rule for target.
@@ -1405,6 +1418,7 @@ help:
 	@echo "... pos320_generate_messages_py"
 	@echo "... pos320_generate_messages"
 	@echo "... pos320_geneus"
+	@echo "... simulator"
 	@echo "... pos320_generate_messages_eus"
 	@echo "... pos320_generate_messages_cpp"
 	@echo "... pos320_generate_messages_lisp"
