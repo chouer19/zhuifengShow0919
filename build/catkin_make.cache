@@ -1,2 +1,2 @@
-path:pos320:steer:zf_msgs
+path:pos320:steer:zf_msgs:zfmsg
 -DCATKIN_DEVEL_PREFIX=/home/zf/xuechong_ws/zhuifengShow0919/devel -DCMAKE_INSTALL_PREFIX=/home/zf/xuechong_ws/zhuifengShow0919/install -G Unix Makefiles

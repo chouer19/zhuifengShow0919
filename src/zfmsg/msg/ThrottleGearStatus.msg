@@ -1,0 +1,11 @@
+std_msgs/Header      header
+int64       ts
+uint8       controlMode
+float32     motorSpeed
+float32     motorCurrent
+uint8       motorBreak
+float32     throttle
+string      gear
+string      gearLeverPosition
+uint8       pedalBreak
+uint8       errorCode

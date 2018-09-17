@@ -121,6 +121,7 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/zf/xuechong_ws/zhuifengShow0919/build/path/cmake_install.cmake")
   include("/home/zf/xuechong_ws/zhuifengShow0919/build/pos320/cmake_install.cmake")
   include("/home/zf/xuechong_ws/zhuifengShow0919/build/steer/cmake_install.cmake")
+  include("/home/zf/xuechong_ws/zhuifengShow0919/build/zfmsg/cmake_install.cmake")
 
 endif()
 

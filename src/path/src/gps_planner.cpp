@@ -61,6 +61,7 @@ void loadMap(const std::string &filename, std::vector<Eigen::Vector3d> &map) {
     map.push_back(getXYZ(lat,lon));
     std::cout<< std::setprecision(10)<< lat << "  " << lon << std::endl;
   }
+  std::cout << "map length is ";
   std::cout<< map.size() << "\n";
 }
 
@@ -112,6 +113,8 @@ int main(int argc, char **argv)
     double dis = 999;
     int index = 0;
     int mark = 0;
+    double right_dis = 0;
+    double forward_dis = 0;
   
     for(Eigen::Vector3d &road_point:map){
       Eigen::Vector3d u_v = road_point - n_vector;
@@ -122,14 +125,17 @@ int main(int argc, char **argv)
       double right = u_v.dot(now_right);
       double temp = std::sqrt( std::pow(forward,2) + std::pow(right,2) );
       //if(temp< 20){std::cout<<temp << std::endl;}
-      if(temp < dis){
+      if(temp < dis && forward > 0){
         dis = temp;
         mark = index;
+        right_dis = right;
+        forward_dis = forward;
       }
       ++index;
     }
     std::cout<<"nearest index:"<< index << "\n";
     std::cout<<"nearest dis:" << dis << "\n";
+    std::cout<<" x y is " << right_dis << "\t" << forward_dis << "\n\n\n";
 
     zf_msgs::pose2dArray waypoints;
     index = 0;

@@ -1,0 +1,10 @@
+std_msgs/Header      header
+int64       ts
+float32     angle
+float32     speed
+uint8       controlMode
+float32     targetAngle
+float32     targetSpeed
+float32     torque
+float32     motorCurrent
+uint8       errorCode

@@ -1335,6 +1335,227 @@ steer_generate_messages_py/fast:
 	$(MAKE) -f steer/CMakeFiles/steer_generate_messages_py.dir/build.make steer/CMakeFiles/steer_generate_messages_py.dir/build
 .PHONY : steer_generate_messages_py/fast
 
+#=============================================================================
+# Target rules for targets named zfmsg_gennodejs
+
+# Build rule for target.
+zfmsg_gennodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_gennodejs
+.PHONY : zfmsg_gennodejs
+
+# fast build rule for target.
+zfmsg_gennodejs/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_gennodejs.dir/build.make zfmsg/CMakeFiles/zfmsg_gennodejs.dir/build
+.PHONY : zfmsg_gennodejs/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_genpy
+
+# Build rule for target.
+zfmsg_genpy: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_genpy
+.PHONY : zfmsg_genpy
+
+# fast build rule for target.
+zfmsg_genpy/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_genpy.dir/build.make zfmsg/CMakeFiles/zfmsg_genpy.dir/build
+.PHONY : zfmsg_genpy/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages_cpp
+
+# Build rule for target.
+zfmsg_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages_cpp
+.PHONY : zfmsg_generate_messages_cpp
+
+# fast build rule for target.
+zfmsg_generate_messages_cpp/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages_cpp.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages_cpp.dir/build
+.PHONY : zfmsg_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_MotionCmd
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_MotionCmd: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_MotionCmd
+.PHONY : _zfmsg_generate_messages_check_deps_MotionCmd
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_MotionCmd/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_MotionCmd.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_MotionCmd.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_MotionCmd/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages
+
+# Build rule for target.
+zfmsg_generate_messages: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages
+.PHONY : zfmsg_generate_messages
+
+# fast build rule for target.
+zfmsg_generate_messages/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages.dir/build
+.PHONY : zfmsg_generate_messages/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_BreakStatus
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_BreakStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_BreakStatus
+.PHONY : _zfmsg_generate_messages_check_deps_BreakStatus
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_BreakStatus/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_BreakStatus.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_BreakStatus.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_BreakStatus/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages_eus
+
+# Build rule for target.
+zfmsg_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages_eus
+.PHONY : zfmsg_generate_messages_eus
+
+# fast build rule for target.
+zfmsg_generate_messages_eus/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages_eus.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages_eus.dir/build
+.PHONY : zfmsg_generate_messages_eus/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_SteerStatus
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_SteerStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_SteerStatus
+.PHONY : _zfmsg_generate_messages_check_deps_SteerStatus
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_SteerStatus/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_SteerStatus.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_SteerStatus.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_SteerStatus/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_gencpp
+
+# Build rule for target.
+zfmsg_gencpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_gencpp
+.PHONY : zfmsg_gencpp
+
+# fast build rule for target.
+zfmsg_gencpp/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_gencpp.dir/build.make zfmsg/CMakeFiles/zfmsg_gencpp.dir/build
+.PHONY : zfmsg_gencpp/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_CanInfo
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_CanInfo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_CanInfo
+.PHONY : _zfmsg_generate_messages_check_deps_CanInfo
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_CanInfo/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_CanInfo.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_CanInfo.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_CanInfo/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_CanInfoAW
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_CanInfoAW: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_CanInfoAW
+.PHONY : _zfmsg_generate_messages_check_deps_CanInfoAW
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_CanInfoAW/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_CanInfoAW.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_CanInfoAW.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_CanInfoAW/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages_py
+
+# Build rule for target.
+zfmsg_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages_py
+.PHONY : zfmsg_generate_messages_py
+
+# fast build rule for target.
+zfmsg_generate_messages_py/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages_py.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages_py.dir/build
+.PHONY : zfmsg_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named _zfmsg_generate_messages_check_deps_ThrottleGearStatus
+
+# Build rule for target.
+_zfmsg_generate_messages_check_deps_ThrottleGearStatus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 _zfmsg_generate_messages_check_deps_ThrottleGearStatus
+.PHONY : _zfmsg_generate_messages_check_deps_ThrottleGearStatus
+
+# fast build rule for target.
+_zfmsg_generate_messages_check_deps_ThrottleGearStatus/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_ThrottleGearStatus.dir/build.make zfmsg/CMakeFiles/_zfmsg_generate_messages_check_deps_ThrottleGearStatus.dir/build
+.PHONY : _zfmsg_generate_messages_check_deps_ThrottleGearStatus/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_geneus
+
+# Build rule for target.
+zfmsg_geneus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_geneus
+.PHONY : zfmsg_geneus
+
+# fast build rule for target.
+zfmsg_geneus/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_geneus.dir/build.make zfmsg/CMakeFiles/zfmsg_geneus.dir/build
+.PHONY : zfmsg_geneus/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_genlisp
+
+# Build rule for target.
+zfmsg_genlisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_genlisp
+.PHONY : zfmsg_genlisp
+
+# fast build rule for target.
+zfmsg_genlisp/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_genlisp.dir/build.make zfmsg/CMakeFiles/zfmsg_genlisp.dir/build
+.PHONY : zfmsg_genlisp/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages_lisp
+
+# Build rule for target.
+zfmsg_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages_lisp
+.PHONY : zfmsg_generate_messages_lisp
+
+# fast build rule for target.
+zfmsg_generate_messages_lisp/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages_lisp.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages_lisp.dir/build
+.PHONY : zfmsg_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named zfmsg_generate_messages_nodejs
+
+# Build rule for target.
+zfmsg_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 zfmsg_generate_messages_nodejs
+.PHONY : zfmsg_generate_messages_nodejs
+
+# fast build rule for target.
+zfmsg_generate_messages_nodejs/fast:
+	$(MAKE) -f zfmsg/CMakeFiles/zfmsg_generate_messages_nodejs.dir/build.make zfmsg/CMakeFiles/zfmsg_generate_messages_nodejs.dir/build
+.PHONY : zfmsg_generate_messages_nodejs/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1438,6 +1659,23 @@ help:
 	@echo "... steer_generate_messages_eus"
 	@echo "... steer_gennodejs"
 	@echo "... steer_generate_messages_py"
+	@echo "... zfmsg_gennodejs"
+	@echo "... zfmsg_genpy"
+	@echo "... zfmsg_generate_messages_cpp"
+	@echo "... _zfmsg_generate_messages_check_deps_MotionCmd"
+	@echo "... zfmsg_generate_messages"
+	@echo "... _zfmsg_generate_messages_check_deps_BreakStatus"
+	@echo "... zfmsg_generate_messages_eus"
+	@echo "... _zfmsg_generate_messages_check_deps_SteerStatus"
+	@echo "... zfmsg_gencpp"
+	@echo "... _zfmsg_generate_messages_check_deps_CanInfo"
+	@echo "... _zfmsg_generate_messages_check_deps_CanInfoAW"
+	@echo "... zfmsg_generate_messages_py"
+	@echo "... _zfmsg_generate_messages_check_deps_ThrottleGearStatus"
+	@echo "... zfmsg_geneus"
+	@echo "... zfmsg_genlisp"
+	@echo "... zfmsg_generate_messages_lisp"
+	@echo "... zfmsg_generate_messages_nodejs"
 .PHONY : help
 
 

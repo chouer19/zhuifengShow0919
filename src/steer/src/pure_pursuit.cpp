@@ -20,7 +20,8 @@ const double WB = 2;
 //min look ahead distance
 const double Lfc = 5;
 //wheel steer gain
-const int K_STEER = 500;
+//const int K_STEER = 100;
+const int K_STEER = 600;
 //look ahead distance
 inline double getPreDis(double vel, double lfc){
   double dis = log(1+vel) + vel*0.75 + 2;
@@ -70,7 +71,8 @@ int main(int argc, char **argv)
 
   ros::Subscriber subWaypoints = n.subscribe("gps_waypoints", 1000, waypointsCallback);
   ros::Subscriber subCurrentPose = n.subscribe("pos320_pose", 1000, currentPoseCallback);
-  ros::Publisher pubWheelSteer = n.advertise<std_msgs::Int32>("pure_pursuit_steer",1000);
+  ros::Publisher pubWheelSteer = n.advertise<std_msgs::Int32>("/cmd/steer_cmd",1000);
+  //ros::Publisher pubWheelSteer = n.advertise<std_msgs::Int32>("pure_pursuit_steer",1000);
 
   int markPoint = 0;
   int targetPoint = 0;
@@ -87,12 +89,12 @@ int main(int argc, char **argv)
     ros::spinOnce();
     /// check if subscribed data
     /// two selections
-    ////if (!is_waypoints_set || !is_pose_set)
-    ////{
-    ////  ROS_WARN("Necessary topics are not subscribed yet ... ");
-    ////  loop_rate.sleep();
-    ////  continue;
-    ////}
+    if (!is_waypoints_set || !is_pose_set)
+    {
+      ROS_WARN("Necessary topics are not subscribed yet ... ");
+      loop_rate.sleep();
+      continue;
+    }
     is_pose_set = false;
     is_waypoints_set = false;
 
@@ -115,11 +117,12 @@ int main(int argc, char **argv)
     /// forward ->y, right-> x
     /// two selections
     //alpha = atan( (waypoints[targetPoint].pose.position.y - waypoints[markPoint].pose.position.y) /(waypoints[targetPoint].pose.position.x - waypoints[markPoint].pose.position.x) );
-    alpha = atan( (waypoints.points[targetPoint].y) /(waypoints.points[targetPoint].x) );
+    alpha = atan( (waypoints.points[targetPoint].x) /(waypoints.points[targetPoint].y) );
     alpha = atan(2.0 * WB * sin(alpha) / forwardDis);
 
     wheel_steer.data = int(alpha * K_STEER);
     pubWheelSteer.publish(wheel_steer);
+    std::cout << waypoints.points[targetPoint].x << "\t" << waypoints.points[targetPoint].y << "\n\n";
     std::cout<< int(alpha * K_STEER) << "\n";
 
     loop_rate.sleep();

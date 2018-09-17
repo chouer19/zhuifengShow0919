@@ -1,0 +1,8 @@
+prefix=/home/zf/xuechong_ws/zhuifengShow0919/devel
+
+Name: zfmsg
+Description: Description of zfmsg
+Version: 0.0.0
+Cflags: -I/home/zf/xuechong_ws/zhuifengShow0919/devel/include
+Libs: -L/home/zf/xuechong_ws/zhuifengShow0919/devel/lib 
+Requires: 

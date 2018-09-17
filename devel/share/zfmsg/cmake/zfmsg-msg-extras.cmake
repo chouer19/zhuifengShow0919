@@ -1,0 +1,2 @@
+set(zfmsg_MESSAGE_FILES "/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/SteerStatus.msg;/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/BreakStatus.msg;/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/ThrottleGearStatus.msg;/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/MotionCmd.msg;/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/CanInfo.msg;/home/zf/xuechong_ws/zhuifengShow0919/src/zfmsg/msg/CanInfoAW.msg")
+set(zfmsg_SERVICE_FILES "")

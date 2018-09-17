@@ -31,6 +31,7 @@ struct Pos320Struct {
 
 int main(int argc, char **argv)
 {
+  std::cout.precision(11);
   ros::init(argc, argv, "driver");
 
   ros::NodeHandle n;
@@ -130,7 +131,7 @@ int main(int argc, char **argv)
     pos320_data.v_e   = v_e;
     pos320_data.v_earth= v_earth;
     pos320_data.roll  = roll;
-    pos320_data.pitch = pitch;
+    pos320_data.pitch = pitch/100;
     pos320_data.head  = head;
     pos320_data.a_n   = a_n;
     pos320_data.a_e   = a_e;
