@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/steer/src/pure_pursuit.cpp" "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/CMakeFiles/pure_pursuit.dir/src/pure_pursuit.cpp.o"
+  "/home/zf/xuechong_ws/zhuifengShow0919/src/steer/src/pure_pursuit.cpp" "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/CMakeFiles/pure_pursuit.dir/src/pure_pursuit.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -17,8 +17,8 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/steer/include"
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include"
+  "/home/zf/xuechong_ws/zhuifengShow0919/src/steer/include"
+  "/home/zf/xuechong_ws/zhuifengShow0919/devel/include"
   "/opt/ros/kinetic/include"
   "/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )

@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/zf_msgs_generate_messages_py"
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py"
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py"
-  "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py"
+  "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pos320.py"
+  "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/_pose2dArray.py"
+  "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/zf_msgs/msg/__init__.py"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/src
+CMAKE_SOURCE_DIR = /home/zf/xuechong_ws/zhuifengShow0919/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
+CMAKE_BINARY_DIR = /home/zf/xuechong_ws/zhuifengShow0919/build
 
 # Utility rule file for path_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ path/CMakeFiles/path_generate_messages_nodejs.dir/build: path_generate_messages_
 .PHONY : path/CMakeFiles/path_generate_messages_nodejs.dir/build
 
 path/CMakeFiles/path_generate_messages_nodejs.dir/clean:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path && $(CMAKE_COMMAND) -P CMakeFiles/path_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build/path && $(CMAKE_COMMAND) -P CMakeFiles/path_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : path/CMakeFiles/path_generate_messages_nodejs.dir/clean
 
 path/CMakeFiles/path_generate_messages_nodejs.dir/depend:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xuechong/workspace/ros_ws/zhuifengShow0919/src /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path /home/xuechong/workspace/ros_ws/zhuifengShow0919/build /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/CMakeFiles/path_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zf/xuechong_ws/zhuifengShow0919/src /home/zf/xuechong_ws/zhuifengShow0919/src/path /home/zf/xuechong_ws/zhuifengShow0919/build /home/zf/xuechong_ws/zhuifengShow0919/build/path /home/zf/xuechong_ws/zhuifengShow0919/build/path/CMakeFiles/path_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : path/CMakeFiles/path_generate_messages_nodejs.dir/depend
 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path
+# Install script for directory: /home/zf/xuechong_ws/zhuifengShow0919/src/path
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/xuechong/workspace/ros_ws/zhuifengShow0919/install")
+  set(CMAKE_INSTALL_PREFIX "/home/zf/xuechong_ws/zhuifengShow0919/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,37 +33,37 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path/cmake" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path/cmake" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/path")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/zf/xuechong_ws/zhuifengShow0919/devel/share/roseus/ros/path")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/path")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/path")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/path")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/path")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path/cmake" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path/cmake" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/path/catkin_generated/installspace/path-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path/cmake" TYPE FILE FILES
-    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/catkin_generated/installspace/pathConfig.cmake"
-    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/catkin_generated/installspace/pathConfig-version.cmake"
+    "/home/zf/xuechong_ws/zhuifengShow0919/build/path/catkin_generated/installspace/pathConfig.cmake"
+    "/home/zf/xuechong_ws/zhuifengShow0919/build/path/catkin_generated/installspace/pathConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/path" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/src/path/package.xml")
 endif()
 

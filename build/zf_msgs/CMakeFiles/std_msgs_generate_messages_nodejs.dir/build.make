@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/src
+CMAKE_SOURCE_DIR = /home/zf/xuechong_ws/zhuifengShow0919/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
+CMAKE_BINARY_DIR = /home/zf/xuechong_ws/zhuifengShow0919/build
 
 # Utility rule file for std_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build: std_msgs_generat
 .PHONY : zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 
 zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build/zf_msgs && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xuechong/workspace/ros_ws/zhuifengShow0919/src /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs /home/xuechong/workspace/ros_ws/zhuifengShow0919/build /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zf/xuechong_ws/zhuifengShow0919/src /home/zf/xuechong_ws/zhuifengShow0919/src/zf_msgs /home/zf/xuechong_ws/zhuifengShow0919/build /home/zf/xuechong_ws/zhuifengShow0919/build/zf_msgs /home/zf/xuechong_ws/zhuifengShow0919/build/zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : zf_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
 

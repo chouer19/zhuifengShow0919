@@ -87,12 +87,12 @@ int main(int argc, char **argv)
     ros::spinOnce();
     /// check if subscribed data
     /// two selections
-    if (!is_waypoints_set || !is_pose_set)
-    {
-      ROS_WARN("Necessary topics are not subscribed yet ... ");
-      loop_rate.sleep();
-      continue;
-    }
+    ////if (!is_waypoints_set || !is_pose_set)
+    ////{
+    ////  ROS_WARN("Necessary topics are not subscribed yet ... ");
+    ////  loop_rate.sleep();
+    ////  continue;
+    ////}
     is_pose_set = false;
     is_waypoints_set = false;
 
@@ -120,6 +120,7 @@ int main(int argc, char **argv)
 
     wheel_steer.data = int(alpha * K_STEER);
     pubWheelSteer.publish(wheel_steer);
+    std::cout<< int(alpha * K_STEER) << "\n";
 
     loop_rate.sleep();
   }

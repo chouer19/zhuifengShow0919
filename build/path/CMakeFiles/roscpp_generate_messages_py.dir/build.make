@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/src
+CMAKE_SOURCE_DIR = /home/zf/xuechong_ws/zhuifengShow0919/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
+CMAKE_BINARY_DIR = /home/zf/xuechong_ws/zhuifengShow0919/build
 
 # Utility rule file for roscpp_generate_messages_py.
 
@@ -63,10 +63,10 @@ path/CMakeFiles/roscpp_generate_messages_py.dir/build: roscpp_generate_messages_
 .PHONY : path/CMakeFiles/roscpp_generate_messages_py.dir/build
 
 path/CMakeFiles/roscpp_generate_messages_py.dir/clean:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build/path && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : path/CMakeFiles/roscpp_generate_messages_py.dir/clean
 
 path/CMakeFiles/roscpp_generate_messages_py.dir/depend:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/xuechong/workspace/ros_ws/zhuifengShow0919/src /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path /home/xuechong/workspace/ros_ws/zhuifengShow0919/build /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/path/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/zf/xuechong_ws/zhuifengShow0919/src /home/zf/xuechong_ws/zhuifengShow0919/src/path /home/zf/xuechong_ws/zhuifengShow0919/build /home/zf/xuechong_ws/zhuifengShow0919/build/path /home/zf/xuechong_ws/zhuifengShow0919/build/path/CMakeFiles/roscpp_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : path/CMakeFiles/roscpp_generate_messages_py.dir/depend
 

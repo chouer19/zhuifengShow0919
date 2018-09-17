@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/src
+CMAKE_SOURCE_DIR = /home/zf/xuechong_ws/zhuifengShow0919/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/xuechong/workspace/ros_ws/zhuifengShow0919/build
+CMAKE_BINARY_DIR = /home/zf/xuechong_ws/zhuifengShow0919/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,8 +69,8 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/ccmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -135,14 +135,14 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/pos320/CMakeFiles/progress.marks
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/xuechong/workspace/ros_ws/zhuifengShow0919/build/CMakeFiles 0
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/zf/xuechong_ws/zhuifengShow0919/build/CMakeFiles /home/zf/xuechong_ws/zhuifengShow0919/build/pos320/CMakeFiles/progress.marks
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zf/xuechong_ws/zhuifengShow0919/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/clean
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/clean
 .PHONY : clean
 
 # The main clean target
@@ -152,22 +152,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/preinstall
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/preinstall
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 pos320/CMakeFiles/driver.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/driver.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/driver.dir/rule
 .PHONY : pos320/CMakeFiles/driver.dir/rule
 
 # Convenience name for target.
@@ -177,12 +177,12 @@ driver: pos320/CMakeFiles/driver.dir/rule
 
 # fast build rule for target.
 driver/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/build
 .PHONY : driver/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_genpy.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_genpy.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_genpy.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_genpy.dir/rule
 
 # Convenience name for target.
@@ -192,12 +192,12 @@ pos320_genpy: pos320/CMakeFiles/pos320_genpy.dir/rule
 
 # fast build rule for target.
 pos320_genpy/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_genpy.dir/build.make pos320/CMakeFiles/pos320_genpy.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_genpy.dir/build.make pos320/CMakeFiles/pos320_genpy.dir/build
 .PHONY : pos320_genpy/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_py.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_py.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_py.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_py.dir/rule
 
 # Convenience name for target.
@@ -207,12 +207,12 @@ pos320_generate_messages_py: pos320/CMakeFiles/pos320_generate_messages_py.dir/r
 
 # fast build rule for target.
 pos320_generate_messages_py/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_py.dir/build.make pos320/CMakeFiles/pos320_generate_messages_py.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_py.dir/build.make pos320/CMakeFiles/pos320_generate_messages_py.dir/build
 .PHONY : pos320_generate_messages_py/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages.dir/rule
 
 # Convenience name for target.
@@ -222,12 +222,12 @@ pos320_generate_messages: pos320/CMakeFiles/pos320_generate_messages.dir/rule
 
 # fast build rule for target.
 pos320_generate_messages/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages.dir/build.make pos320/CMakeFiles/pos320_generate_messages.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages.dir/build.make pos320/CMakeFiles/pos320_generate_messages.dir/build
 .PHONY : pos320_generate_messages/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_geneus.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_geneus.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_geneus.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_geneus.dir/rule
 
 # Convenience name for target.
@@ -237,12 +237,12 @@ pos320_geneus: pos320/CMakeFiles/pos320_geneus.dir/rule
 
 # fast build rule for target.
 pos320_geneus/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_geneus.dir/build.make pos320/CMakeFiles/pos320_geneus.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_geneus.dir/build.make pos320/CMakeFiles/pos320_geneus.dir/build
 .PHONY : pos320_geneus/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/simulator.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/simulator.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/simulator.dir/rule
 .PHONY : pos320/CMakeFiles/simulator.dir/rule
 
 # Convenience name for target.
@@ -252,12 +252,12 @@ simulator: pos320/CMakeFiles/simulator.dir/rule
 
 # fast build rule for target.
 simulator/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/build
 .PHONY : simulator/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_eus.dir/rule
 
 # Convenience name for target.
@@ -267,12 +267,12 @@ pos320_generate_messages_eus: pos320/CMakeFiles/pos320_generate_messages_eus.dir
 
 # fast build rule for target.
 pos320_generate_messages_eus/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_eus.dir/build.make pos320/CMakeFiles/pos320_generate_messages_eus.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_eus.dir/build.make pos320/CMakeFiles/pos320_generate_messages_eus.dir/build
 .PHONY : pos320_generate_messages_eus/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_cpp.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_cpp.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_cpp.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
@@ -282,12 +282,12 @@ pos320_generate_messages_cpp: pos320/CMakeFiles/pos320_generate_messages_cpp.dir
 
 # fast build rule for target.
 pos320_generate_messages_cpp/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_cpp.dir/build.make pos320/CMakeFiles/pos320_generate_messages_cpp.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_cpp.dir/build.make pos320/CMakeFiles/pos320_generate_messages_cpp.dir/build
 .PHONY : pos320_generate_messages_cpp/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_lisp.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_lisp.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_lisp.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
@@ -297,12 +297,12 @@ pos320_generate_messages_lisp: pos320/CMakeFiles/pos320_generate_messages_lisp.d
 
 # fast build rule for target.
 pos320_generate_messages_lisp/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_lisp.dir/build.make pos320/CMakeFiles/pos320_generate_messages_lisp.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_lisp.dir/build.make pos320/CMakeFiles/pos320_generate_messages_lisp.dir/build
 .PHONY : pos320_generate_messages_lisp/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_gencpp.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_gencpp.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_gencpp.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_gencpp.dir/rule
 
 # Convenience name for target.
@@ -312,12 +312,12 @@ pos320_gencpp: pos320/CMakeFiles/pos320_gencpp.dir/rule
 
 # fast build rule for target.
 pos320_gencpp/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_gencpp.dir/build.make pos320/CMakeFiles/pos320_gencpp.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_gencpp.dir/build.make pos320/CMakeFiles/pos320_gencpp.dir/build
 .PHONY : pos320_gencpp/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_genlisp.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_genlisp.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_genlisp.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_genlisp.dir/rule
 
 # Convenience name for target.
@@ -327,12 +327,12 @@ pos320_genlisp: pos320/CMakeFiles/pos320_genlisp.dir/rule
 
 # fast build rule for target.
 pos320_genlisp/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_genlisp.dir/build.make pos320/CMakeFiles/pos320_genlisp.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_genlisp.dir/build.make pos320/CMakeFiles/pos320_genlisp.dir/build
 .PHONY : pos320_genlisp/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
@@ -342,12 +342,12 @@ pos320_generate_messages_nodejs: pos320/CMakeFiles/pos320_generate_messages_node
 
 # fast build rule for target.
 pos320_generate_messages_nodejs/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/build.make pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/build.make pos320/CMakeFiles/pos320_generate_messages_nodejs.dir/build
 .PHONY : pos320_generate_messages_nodejs/fast
 
 # Convenience name for target.
 pos320/CMakeFiles/pos320_gennodejs.dir/rule:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_gennodejs.dir/rule
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f CMakeFiles/Makefile2 pos320/CMakeFiles/pos320_gennodejs.dir/rule
 .PHONY : pos320/CMakeFiles/pos320_gennodejs.dir/rule
 
 # Convenience name for target.
@@ -357,7 +357,7 @@ pos320_gennodejs: pos320/CMakeFiles/pos320_gennodejs.dir/rule
 
 # fast build rule for target.
 pos320_gennodejs/fast:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_gennodejs.dir/build.make pos320/CMakeFiles/pos320_gennodejs.dir/build
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/pos320_gennodejs.dir/build.make pos320/CMakeFiles/pos320_gennodejs.dir/build
 .PHONY : pos320_gennodejs/fast
 
 src/driver.o: src/driver.cpp.o
@@ -366,7 +366,7 @@ src/driver.o: src/driver.cpp.o
 
 # target to build an object file
 src/driver.cpp.o:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.o
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.o
 .PHONY : src/driver.cpp.o
 
 src/driver.i: src/driver.cpp.i
@@ -375,7 +375,7 @@ src/driver.i: src/driver.cpp.i
 
 # target to preprocess a source file
 src/driver.cpp.i:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.i
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.i
 .PHONY : src/driver.cpp.i
 
 src/driver.s: src/driver.cpp.s
@@ -384,7 +384,7 @@ src/driver.s: src/driver.cpp.s
 
 # target to generate assembly for a file
 src/driver.cpp.s:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.s
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/driver.dir/build.make pos320/CMakeFiles/driver.dir/src/driver.cpp.s
 .PHONY : src/driver.cpp.s
 
 src/simulator.o: src/simulator.cpp.o
@@ -393,7 +393,7 @@ src/simulator.o: src/simulator.cpp.o
 
 # target to build an object file
 src/simulator.cpp.o:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.o
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.o
 .PHONY : src/simulator.cpp.o
 
 src/simulator.i: src/simulator.cpp.i
@@ -402,7 +402,7 @@ src/simulator.i: src/simulator.cpp.i
 
 # target to preprocess a source file
 src/simulator.cpp.i:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.i
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.i
 .PHONY : src/simulator.cpp.i
 
 src/simulator.s: src/simulator.cpp.s
@@ -411,7 +411,7 @@ src/simulator.s: src/simulator.cpp.s
 
 # target to generate assembly for a file
 src/simulator.cpp.s:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.s
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(MAKE) -f pos320/CMakeFiles/simulator.dir/build.make pos320/CMakeFiles/simulator.dir/src/simulator.cpp.s
 .PHONY : src/simulator.cpp.s
 
 # Help Target
@@ -457,6 +457,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/xuechong/workspace/ros_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/zf/xuechong_ws/zhuifengShow0919/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

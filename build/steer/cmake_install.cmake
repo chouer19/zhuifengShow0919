@@ -1,8 +1,8 @@
-# Install script for directory: /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/steer
+# Install script for directory: /home/zf/xuechong_ws/zhuifengShow0919/src/steer
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/xuechong/workspace/ros_ws/zhuifengShow0919/install")
+  set(CMAKE_INSTALL_PREFIX "/home/zf/xuechong_ws/zhuifengShow0919/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,37 +33,37 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer/cmake" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer/cmake" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/share/roseus/ros/steer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/zf/xuechong_ws/zhuifengShow0919/devel/share/roseus/ros/steer")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/steer")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/steer")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/steer")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/zf/xuechong_ws/zhuifengShow0919/devel/lib/python2.7/dist-packages/steer")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer/cmake" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer/cmake" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steer-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer/cmake" TYPE FILE FILES
-    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steerConfig.cmake"
-    "/home/xuechong/workspace/ros_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steerConfig-version.cmake"
+    "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steerConfig.cmake"
+    "/home/zf/xuechong_ws/zhuifengShow0919/build/steer/catkin_generated/installspace/steerConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer" TYPE FILE FILES "/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/steer/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/steer" TYPE FILE FILES "/home/zf/xuechong_ws/zhuifengShow0919/src/steer/package.xml")
 endif()
 

@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11
 
 CXX_DEFINES = -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"path\"
 
-CXX_INCLUDES = -I/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/path/include -I/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -isystem /usr/local/include/eigen3 
+CXX_INCLUDES = -I/home/zf/xuechong_ws/zhuifengShow0919/src/path/include -I/home/zf/xuechong_ws/zhuifengShow0919/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

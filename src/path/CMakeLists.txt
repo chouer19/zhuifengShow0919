@@ -7,7 +7,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 ## Find catkin and any catkin packages
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs nav_msgs geometry_msgs genmsg zf_msgs)
 ## Find Eigen, for matrix operation
-find_package (Eigen3 REQUIRED NO_MODULE)
+find_package (Eigen3 )
+## find_package (Eigen3 REQUIRED )
 
 ## Declare ROS messages and services
 #add_message_files(FILES Num.msg)
@@ -23,7 +24,7 @@ catkin_package()
 include_directories(include ${catkin_INCLUDE_DIRS})
 
 add_executable(gps_planner src/gps_planner.cpp)
-target_link_libraries(gps_planner ${catkin_LIBRARIES} ${Boost_LIBRARIES} Eigen3::Eigen)
+target_link_libraries(gps_planner ${catkin_LIBRARIES} ${Boost_LIBRARIES} )
 #target_link_libraries(test_pos320 ${Boost_LIBRARIES} Eigen3::Eigen)
 add_dependencies(gps_planner path_generate_messages_cpp)
 

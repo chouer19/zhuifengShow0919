@@ -142,6 +142,7 @@ int main(int argc, char **argv)
     pos320_data.status2= status2;
     pos320_pub.publish(pos320_data);
     ros::spinOnce();
+    std::cout<< lat<< "\t"<< lon << "\n";
 
     loop_rate.sleep();
   }

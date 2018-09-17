@@ -67,14 +67,14 @@ set(zf_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(zf_msgs_SOURCE_PREFIX /home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs)
-  set(zf_msgs_DEVEL_PREFIX /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel)
+  set(zf_msgs_SOURCE_PREFIX /home/zf/xuechong_ws/zhuifengShow0919/src/zf_msgs)
+  set(zf_msgs_DEVEL_PREFIX /home/zf/xuechong_ws/zhuifengShow0919/devel)
   set(zf_msgs_INSTALL_PREFIX "")
   set(zf_msgs_PREFIX ${zf_msgs_DEVEL_PREFIX})
 else()
   set(zf_msgs_SOURCE_PREFIX "")
   set(zf_msgs_DEVEL_PREFIX "")
-  set(zf_msgs_INSTALL_PREFIX /home/xuechong/workspace/ros_ws/zhuifengShow0919/install)
+  set(zf_msgs_INSTALL_PREFIX /home/zf/xuechong_ws/zhuifengShow0919/install)
   set(zf_msgs_PREFIX ${zf_msgs_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(zf_msgs_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include " STREQUAL " ")
+if(NOT "/home/zf/xuechong_ws/zhuifengShow0919/devel/include " STREQUAL " ")
   set(zf_msgs_INCLUDE_DIRS "")
-  set(_include_dirs "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include")
+  set(_include_dirs "/home/zf/xuechong_ws/zhuifengShow0919/devel/include")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT " " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/include " STREQUA
         message(FATAL_ERROR "Project 'zf_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'zf_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/zf_msgs/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'zf_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/zf/xuechong_ws/zhuifengShow0919/src/zf_msgs/${idir}'.  ${_report}")
     endif()
     _list_append_unique(zf_msgs_INCLUDE_DIRS ${include})
   endforeach()
@@ -129,7 +129,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib;/home/xuechong/workspace/ros_ws/zhuifengShow0919/devel/lib;/opt/ros/kinetic/lib)
+    foreach(path /home/zf/xuechong_ws/zhuifengShow0919/devel/lib;/home/zf/catkin_ws/devel/lib;/opt/ros/kinetic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

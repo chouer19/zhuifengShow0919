@@ -30,7 +30,7 @@ bool is_pose_set = false;
 
 /// convert lat,lon to xyz
 inline Eigen::Vector3d getXYZ(const double &lat, const double &lon){
-  Eigen::Vector3d e(std::cos(lat/180.0 * PI) * std::cos(lon), std::cos(lat/180.0 * PI) * std::sin(lon), std::sin(lat/180.0 * PI));
+  Eigen::Vector3d e(std::cos(lat/180.0 * PI) * std::cos(lon/180 * PI), std::cos(lat/180.0 * PI) * std::sin(lon/180 * PI), std::sin(lat/180.0 * PI));
   e[0] *= EARTH_RADIUS;
   e[1] *= EARTH_RADIUS;
   e[2] *= EARTH_RADIUS;
@@ -38,7 +38,7 @@ inline Eigen::Vector3d getXYZ(const double &lat, const double &lon){
 }
 
 inline Eigen::Vector3d getXYZe(const double &lat, const double &lon){
-  Eigen::Vector3d e(std::cos(lat/180.0 * PI) * std::cos(lon), std::cos(lat/180.0 * PI) * std::sin(lon), std::sin(lat/180.0 * PI));
+  Eigen::Vector3d e(std::cos(lat/180.0 * PI) * std::cos(lon/180 * PI), std::cos(lat/180.0 * PI) * std::sin(lon/180 * PI), std::sin(lat/180.0 * PI));
   return e;
 }
 
@@ -61,13 +61,14 @@ void loadMap(const std::string &filename, std::vector<Eigen::Vector3d> &map) {
     map.push_back(getXYZ(lat,lon));
     std::cout<< std::setprecision(10)<< lat << "  " << lon << std::endl;
   }
+  std::cout<< map.size() << "\n";
 }
 
 int main(int argc, char **argv)
 {
   /// load map
   std::vector<Eigen::Vector3d> map;
-  loadMap("/home/xuechong/workspace/ros_ws/zhuifengShow0919/src/testdata/0910_1.map",map);
+  loadMap("/home/zf/xuechong_ws/zhuifengShow0919/map/map.txt",map);
   ROS_INFO_STREAM("finished loading map from file");
 
   /// init node
@@ -98,7 +99,7 @@ int main(int argc, char **argv)
     /// unit vector of faxiangliang
     Eigen::Vector3d ne_vector = getXYZe(cur_pose.lat, cur_pose.lon);
     /// nn
-    Eigen::Vector3d nn_vector(-1 * ne_vector[0],   -1 * ne_vector[1],    (std::pow(ne_vector[0] ,2) + std::pow(ne_vector[1] ,2)) / ne_vector[2] );
+    Eigen::Vector3d nn_vector(-1 * ne_vector[0] * std::abs(ne_vector[2]),   -1 * ne_vector[1] * std::abs(ne_vector[2]),    std::abs(std::pow(ne_vector[0] ,2) + std::pow(ne_vector[1] ,2))  );
     /// 
     Eigen::AngleAxisd rotation(cur_pose.head/ -180.0 * PI , ne_vector);
     Eigen::Vector3d now_forward = rotation * nn_vector;
@@ -114,18 +115,21 @@ int main(int argc, char **argv)
   
     for(Eigen::Vector3d &road_point:map){
       Eigen::Vector3d u_v = road_point - n_vector;
-      //std::cout<< u_v << "\n\n";
+      ///std::cout<< road_point << "\n\n";
+      ///std::cout<< n_vector << "\n\n";
+      ///std::cout<< u_v << "\n\n";
       double forward = u_v.dot(now_forward);
       double right = u_v.dot(now_right);
       double temp = std::sqrt( std::pow(forward,2) + std::pow(right,2) );
+      //if(temp< 20){std::cout<<temp << std::endl;}
       if(temp < dis){
         dis = temp;
         mark = index;
       }
       ++index;
     }
-    //std::cout<<"nearest index:"<< index << "\n";
-    //std::cout<<"nearest dis:" << dis << "\n";
+    std::cout<<"nearest index:"<< index << "\n";
+    std::cout<<"nearest dis:" << dis << "\n";
 
     zf_msgs::pose2dArray waypoints;
     index = 0;
@@ -149,6 +153,7 @@ int main(int argc, char **argv)
       if(index > 50){break;}
     }
     pubWaypoints.publish(waypoints);
+    std::cout<<"planning ..." <<"\n";
     loop_rate.sleep();
   }
 
