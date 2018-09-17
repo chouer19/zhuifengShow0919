@@ -31,6 +31,7 @@ struct Pos320Struct {
 
 int main(int argc, char **argv)
 {
+  std::cout.precision(9);
   ros::init(argc, argv, "driver");
 
   ros::NodeHandle n;
