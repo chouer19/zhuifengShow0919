@@ -18,14 +18,19 @@ const int LOOP_RATE_ = 20;
 //wheel base length
 const double WB = 2;
 //min look ahead distance
-const double Lfc = 5;
 //wheel steer gain
 //const int K_STEER = 100;
-const int K_STEER = 600;
+const double Lfc = 3;
+const int K_STEER = 550;
+const int K_DEVIA = 40;
+const int OFFSET_STEER = -75;
+int getWheelAngle(const double &delta, const double &devia){
+  int angle = int(K_STEER * delta + devia * K_DEVIA) + OFFSET_STEER;
+  return angle;
+}
 //look ahead distance
-inline double getPreDis(double vel, double lfc){
-  double dis = log(1+vel) + vel*0.75 + 2;
-  return (dis > lfc) ? dis : lfc;
+inline double getPreDis(double vel){
+  return log(1+vel) + vel*0.8 + Lfc;
 }
 
 bool is_waypoints_set = false;
@@ -42,6 +47,7 @@ void waypointsCallback(const zf_msgs::pose2dArray msg)
   is_waypoints_set = true;
 }
 
+
 void currentPoseCallback(const zf_msgs::pos320 msg)
 {
   ///
@@ -54,7 +60,7 @@ int getTargetPoint(double dis)
 {
   int target = 1;
   double L = 0;
-  while(L > dis && target < waypoints.points.size())
+  while(L < dis && target < waypoints.points.size())
   {
     L += ( sqrt( pow( waypoints.points[target].x - waypoints.points[target -1].x ,2) + 
                  pow( waypoints.points[target].y - waypoints.points[target -1].y, 2) ) );
@@ -109,10 +115,12 @@ int main(int argc, char **argv)
 
     /// get forward dis
     double velocity = std::sqrt( std::pow(pose.v_e,2) + std::pow(pose.v_n,2) + std::pow(pose.v_earth,2));
-    forwardDis = getPreDis(velocity, Lfc);
+    forwardDis = getPreDis(velocity);
+    ///std::cout<< "forward dis is : "<< forwardDis << "\n";
 
     /// get target point 
     targetPoint = getTargetPoint(forwardDis);
+    std::cout<< "target point is : "<< targetPoint << "\n";
 
     /// forward ->y, right-> x
     /// two selections
@@ -120,10 +128,10 @@ int main(int argc, char **argv)
     alpha = atan( (waypoints.points[targetPoint].x) /(waypoints.points[targetPoint].y) );
     alpha = atan(2.0 * WB * sin(alpha) / forwardDis);
 
-    wheel_steer.data = int(alpha * K_STEER);
+    wheel_steer.data = getWheelAngle(alpha, waypoints.points[int(targetPoint/2)].x);
     pubWheelSteer.publish(wheel_steer);
     std::cout << waypoints.points[targetPoint].x << "\t" << waypoints.points[targetPoint].y << "\n\n";
-    std::cout<< int(alpha * K_STEER) << "\n";
+    std::cout<< wheel_steer.data - OFFSET_STEER << "\n";
 
     loop_rate.sleep();
   }
